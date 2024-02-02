@@ -1,4 +1,4 @@
-# Creando TablasEPTNO
+# Creando Tablas
 
 Imagina que cada tabla en una base de datos de Oracle es como un lienzo, donde cada pincelada representa una fila y cada color vibrante, una columna. La creación de una tabla, como 'empleados', es el inicio de una obra de arte, donde los nombres de las columnas son los matices que definirán su carácter - '**_empleados_id_**', '**last_nombre**', '**trabajo_id**'. Cada columna tiene su propio tono, su **datatype**, como si fuera un pigmento especial - **VARCHAR2**, **DATE**, **NUMBER** - y su propia dimensión, como el ancho de una pincelada en el lienzo.
 
