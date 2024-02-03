@@ -475,4 +475,31 @@ FROM empleados a, empleados b
 WHERE a.manager_id = b.id;
 ```
 
-Hemos explorado cómo los diferentes tipos de "joins" en Oracle SQL actúan como puentes entre las islas de datos, cada uno con su propósito y belleza. Al igual que en el arte, donde la elección de técnica impacta profundamente en la obra final, en SQL, la elección del "join" determina la forma y el contenido de los conjuntos de datos que creamos. Cruzar estos puentes con intención y comprensión nos permite componer consultas que son verdaderas obras maestras de la información.
+# DML y DDL ¿Una disonancia?
+
+En el vasto lienzo de Oracle SQL, los artistas de la base de datos ejercen su creatividad y precisión a través de dos paletas fundamentales: el Lenguaje de Manipulación de Datos (DML) y el Lenguaje de Definición de Datos (DDL). Estas herramientas son los pinceles con los que dibujan estructuras, dan forma a los datos y pintan las interacciones que definen el flujo de información. A continuación, exploraremos estas paletas, comparándolas con métodos artísticos para comprender su esencia y aplicaciones.
+
+#### DML: Los Pinceles Dinámicos de Datos
+
+El DML es como el conjunto de pinceles y colores que un pintor utiliza para dar vida a su lienzo. Con cada trazo, el artista añade, modifica, o remueve elementos de su obra, siempre en busca de la expresión perfecta. En Oracle SQL, estos pinceles dinámicos incluyen:
+
+- **INSERT**: La adición de nuevos datos es como el primer trazo de pintura en un lienzo en blanco, una promesa de lo que está por venir.
+- **UPDATE**: Modificar datos existentes es como retocar una obra con nuevos colores y sombras, refinando su significado y belleza.
+- **DELETE**: Eliminar datos es como el acto de borrar o pintar sobre partes de la obra que ya no se desean, una decisión reflexiva para mejorar el conjunto.
+
+El DML permite interactuar directamente con el contenido del lienzo (la base de datos), transformándolo continuamente con una flexibilidad que invita a la experimentación y la adaptación.
+
+#### DDL: Los cinceles de la Estructura
+
+El DDL, por otro lado, es como el conjunto de cinceles que un escultor utiliza para definir la forma de su obra maestra. Estas herramientas no se ocupan de los matices del color o la textura, sino de la estructura misma del mármol o la madera. En el mundo de Oracle SQL, el DDL incluye:
+
+- **CREATE**: Crear una nueva tabla es como esculpir una forma a partir de la roca bruta, el acto fundacional que define el espacio de la obra.
+- **ALTER**: Modificar una tabla existente es como afinar los detalles de la escultura, ajustando sus contornos y características para alcanzar la perfección deseada.
+- **DROP**: Eliminar una tabla es como retirar una pieza completa del estudio, un acto final que deja espacio para nuevas creaciones.
+- **TRUNCATE**: Vaciar una tabla de datos sin eliminar su estructura es como limpiar el lienzo para empezar de nuevo, manteniendo intacto el marco y la tela.
+
+El DDL configura el escenario donde se desarrollará el drama de los datos, estableciendo los límites y posibilidades dentro de los cuales el DML puede operar.
+
+#### Intersección y Armonía
+
+Aunque el DML y el DDL pueden parecer mundos aparte, como la pintura y la escultura, en la práctica se entrelazan íntimamente. La estructura definida por el DDL crea el marco dentro del cual el DML trae a la vida los datos, en un ciclo continuo de creación y expresión. Es la interacción entre estas dos fuerzas lo que permite a los artistas de la base de datos —los desarrolladores y administradores— construir no solo almacenamientos de información, sino verdaderas obras de arte funcionales.
