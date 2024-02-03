@@ -408,3 +408,71 @@ from departamentos; select  count(*) empleados from empleados;
 ```
 
 Estas consultas nos confirman que '**_DEPARTAMENTOS_**' y '**_EMPLEADOS_**' no solo han sido recuperadas, sino que están completas, listas para contribuir una vez más a la rica narrativa de nuestra base de datos. Es un recordatorio poderoso de la capacidad de recuperación y renovación, donde incluso en el mundo de los datos, lo que una vez se consideró perdido puede ser redescubierto y restaurado, como las capas de pintura ocultas bajo la superficie de un cuadro, esperando ser reveladas de nuevo al mundo.
+
+# Joins
+
+En el vasto y dinámico mundo de Oracle SQL, los "joins" son como los puentes que conectan islas separadas de información, permitiendo que fluyan datos entre ellas para crear paisajes ricos y cohesivos. Cada tipo de "join" tiene su propósito y su aplicación, similar a cómo diferentes tipos de puentes (colgantes, de arco, de vigas) conectan diversos terrenos en el mundo real. A continuación, te guiaré a través de un capítulo imaginario sobre los distintos tipos de "join" en Oracle SQL, presentados como una serie de técnicas artísticas para fusionar distintas piezas de una colección en una obra compuesta armoniosa.
+
+### Los Puentes de Datos - Explorando los Joins en Oracle SQL
+
+#### INNER JOIN: El Puente Clásico
+
+El "INNER JOIN" es el puente clásico que solo conecta islas cuyos caminos están claramente definidos en ambas direcciones. Es como una técnica de collage donde solo se combinan las piezas que tienen correspondencia exacta, dejando fuera aquellas que no encuentran su par. Este "join" crea una armonía perfecta entre las tablas, seleccionando filas que tienen valores coincidentes en ambas.
+
+```sql
+SELECT empleados.nombre, departamentos.nombre
+FROM empleados
+JOIN departamentos ON empleados.depto_id = departamentos.id;
+```
+
+#### LEFT OUTER JOIN: El Puente Asimétrico
+
+El "LEFT OUTER JOIN" actúa como un puente asimétrico, donde todas las islas del lado izquierdo están conectadas, llevando consigo cualquier isla relacionada del lado derecho que encuentren. Las islas del lado izquierdo sin pareja son también incluidas, pero como solitarias. Este método es como una técnica de arte mixto que asegura que todas las obras del "lado izquierdo" sean mostradas, con o sin compañeras del "lado derecho".
+
+```sql
+SELECT empleados.nombre, departamentos.nombre
+FROM empleados
+LEFT JOIN departamentos ON empleados.depto_id = departamentos.id;
+```
+
+#### RIGHT OUTER JOIN: El Puente Inverso
+
+El "RIGHT OUTER JOIN" es el espejo del anterior, un puente que prioriza las islas del lado derecho. Es como organizar una exposición donde cada pieza del "lado derecho" debe ser presentada, atrayendo consigo cualquier pieza relacionada del "lado izquierdo", y dejando las piezas del "lado derecho" sin pareja visibles en soledad.
+
+```sql
+SELECT empleados.nombre, departamentos.nombre
+FROM empleados
+RIGHT JOIN departamentos ON empleados.depto_id = departamentos.id;
+```
+
+#### FULL OUTER JOIN: El Puente Panorámico
+
+El "FULL OUTER JOIN" construye un puente panorámico, abarcando todas las islas, independientemente de si tienen una pareja directa o no. Es como una exhibición de arte que decide mostrar cada obra disponible, creando un panorama completo de todas las piezas en la colección, conectadas o no.
+
+```sql
+SELECT empleados.nombre, departamentos.nombre
+FROM empleados
+FULL OUTER JOIN departamentos ON empleados.depto_id = departamentos.id;
+```
+
+#### CROSS JOIN: El Puente de la Proliferación
+
+El "CROSS JOIN" crea un puente que conecta cada isla con todas las demás, sin importar las relaciones preexistentes. Es una técnica de ensamblaje libre, donde cada pieza se combina con todas las demás, generando un vasto número de combinaciones posibles.
+
+```sql
+SELECT empleados.nombre, departamentos.nombre
+FROM empleados
+CROSS JOIN departamentos;
+```
+
+#### SELF JOIN: El Puente Reflexivo
+
+El "SELF JOIN" es un puente que conecta una isla consigo misma, revelando relaciones internas ocultas. Es como un artista que crea una obra reflexiva, explorando las conexiones internas dentro de una sola pieza o tema.
+
+```sql
+SELECT a.nombre AS Nombre1, b.nombre AS Nombre2
+FROM empleados a, empleados b
+WHERE a.manager_id = b.id;
+```
+
+Hemos explorado cómo los diferentes tipos de "joins" en Oracle SQL actúan como puentes entre las islas de datos, cada uno con su propósito y belleza. Al igual que en el arte, donde la elección de técnica impacta profundamente en la obra final, en SQL, la elección del "join" determina la forma y el contenido de los conjuntos de datos que creamos. Cruzar estos puentes con intención y comprensión nos permite componer consultas que son verdaderas obras maestras de la información.
